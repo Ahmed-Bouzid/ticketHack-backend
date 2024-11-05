@@ -26,4 +26,14 @@ router.post('/', (req, res) => {
         })
 });
 
+
+router.post('/id', (req, res) => {
+  Trip.findById(req.body.id)
+     .then(dbData => {
+      res.json({selected: dbData})
+    })
+  })
 module.exports = router;
+
+
+
