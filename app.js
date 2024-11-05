@@ -6,6 +6,7 @@ var cors = require("cors");
 var indexRouter = require("./routes/index");
 var Trip = require("./routes/trips");
 var app = express();
+var reservationsRouter = require("./routes/reservations");
 
 app.use(cors());
 app.use(logger("dev"));
@@ -16,5 +17,5 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/trips", Trip);
-
+app.use("/reservations", reservationsRouter);
 module.exports = app;
