@@ -32,7 +32,8 @@ router.post('/id', (req, res) => {
      .then(dbData => {
       res.json({selected: dbData})
     })
-  })
+  });
+
 module.exports = router;
 
 
